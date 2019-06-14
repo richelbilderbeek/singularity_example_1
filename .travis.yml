@@ -2,12 +2,15 @@ language: generic
 dist: xenial
 cache: packages
 
-addons: 
-  apt: 
-    packages: 
-      - singularity-container
+#Cannot: added since yakkety :-(
+#addons: 
+#  apt: 
+#    packages: 
+#      - singularity-container
 
 install:
+  # Singularity
+  - sudo ./install_singularity
   # Check dead links
   - sudo apt-get install -qq npm
   - npm config set strict-ssl false
