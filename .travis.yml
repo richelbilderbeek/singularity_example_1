@@ -25,8 +25,8 @@ script:
   - which singularity
   # Show the singularity version
   - singularity --version
-  # Build an image
-  - singularity build hello_world.simg shub://singularityhub/ubuntu
+  # Build an image, must use sudo
+  - sudo singularity build hello_world.simg shub://singularityhub/ubuntu
   # Run the image
   - singularity run hello_world.simg which cowsay
   - singularity run hello_world.simg cowsay "You did it!"
