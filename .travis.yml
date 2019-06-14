@@ -1,4 +1,4 @@
-language: go
+language: generic
 dist: xenial
 cache: packages
 
@@ -11,14 +11,12 @@ addons:
 
 install:
   # Check dead links
-  #- sudo apt-get install -qq npm
-  #- npm config set strict-ssl false
-  #- sudo npm install -g markdown-link-check
+  - sudo apt-get install -qq npm
+  - npm config set strict-ssl false
+  - sudo npm install -g markdown-link-check
   # Check dead links before singularity installs itself
-  #- rm .travis.yml
-  #- ./scripts/check_dead_links
-  # Show the version of the go programming language
-  - go version
+  - rm .travis.yml
+  - ./scripts/check_dead_links
   # Singularity
   - sudo ./install_singularity
 
