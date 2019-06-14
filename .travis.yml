@@ -9,20 +9,18 @@ addons:
       #Cannot: added since yakkety :-(
       #- singularity-container
 
-
-
 install:
-  # Singularity
-  - sudo ./install_singularity
   # Check dead links
   - sudo apt-get install -qq npm
   - npm config set strict-ssl false
   - sudo npm install -g markdown-link-check
-
-script:
-  # Check dead links before singularity creates its containers
+  # Check dead links before singularity installs itself
   - rm .travis.yml
   - ./scripts/check_dead_links
+  # Singularity
+  - sudo ./install_singularity
+
+script:
   # Show the location
   - which singularity
   # Show the singularity version
