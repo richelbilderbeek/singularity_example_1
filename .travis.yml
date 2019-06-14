@@ -28,7 +28,11 @@ script:
   # Build an image, must use sudo
   - sudo singularity build hello_world.simg shub://singularityhub/ubuntu
   # Run the image
-  - singularity run hello_world.simg which cowsay
-  - singularity run hello_world.simg cowsay "You did it!"
-  # Confirm that there is no cowsay on Travis
-  - cowsay "I am absent on Travis" || true
+  # Show the root ...
+  - singularity exec hello_world.simg ls /
+  # ... which is different from Travis' root
+  - ls /
+  # Show the /singularity file ...
+  - singularity exec hello_world.simg cat /singularity
+  # ... which is absent on Travis
+  - cat /singularity || true
