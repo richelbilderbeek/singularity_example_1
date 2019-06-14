@@ -17,12 +17,12 @@ install:
   # Check dead links before singularity installs itself
   - rm .travis.yml
   - ./scripts/check_dead_links
+  # Show the version of the go programming language
+  - golang --version
   # Singularity
   - sudo ./install_singularity
 
 script:
-  # Show the version of the go programming language
-  - golang --version
   # Show the location
   - which singularity
   # Show the singularity version
