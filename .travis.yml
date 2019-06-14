@@ -36,3 +36,7 @@ script:
   - singularity exec hello_world.simg cat /singularity
   # ... which is absent on Travis
   - cat /singularity || true
+  # Show the singularity OS version ...
+  - singularity exec hello_world.simg cat /etc/os-releas* 
+  # ... which is different on Travis
+  - cat /etc/os-releas*
