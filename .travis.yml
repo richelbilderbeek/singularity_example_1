@@ -5,7 +5,7 @@ cache: packages
 addons: 
   apt: 
     packages: 
-      - singularity
+      - singularity-container
 
 install:
   # Check dead links
