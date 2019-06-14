@@ -1,4 +1,4 @@
-language: generic
+language: go
 dist: xenial
 cache: packages
 
@@ -6,7 +6,6 @@ addons:
   apt: 
     packages: 
       - libarchive-dev
-      - golang
       #Cannot: added since yakkety :-(
       #- singularity-container
 
