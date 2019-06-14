@@ -31,3 +31,6 @@
 *.out
 *.app
 *.simg
+*.tar.gz
+*.tar.gz.*
+singularity/
