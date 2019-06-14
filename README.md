@@ -1,2 +1,3 @@
 # singularity_example_1
-Seingularity example 1: Hello World
+
+Singularity example 1: Hello World.
