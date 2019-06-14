@@ -6,6 +6,7 @@ addons:
   apt: 
     packages: 
       - libarchive-dev
+      - golang
       #Cannot: added since yakkety :-(
       #- singularity-container
 
