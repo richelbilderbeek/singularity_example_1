@@ -2,11 +2,14 @@ language: generic
 dist: xenial
 cache: packages
 
-#Cannot: added since yakkety :-(
-#addons: 
-#  apt: 
-#    packages: 
-#      - singularity-container
+addons: 
+  apt: 
+    packages: 
+      - libarchive-dev
+      #Cannot: added since yakkety :-(
+      #- singularity-container
+
+
 
 install:
   # Singularity
