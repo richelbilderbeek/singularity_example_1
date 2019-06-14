@@ -18,7 +18,7 @@ install:
   #- rm .travis.yml
   #- ./scripts/check_dead_links
   # Show the version of the go programming language
-  - golang --version
+  - go --version
   # Singularity
   - sudo ./install_singularity
 
