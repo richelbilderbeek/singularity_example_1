@@ -25,7 +25,7 @@ script:
   # Show the singularity version
   - singularity --version
   # Build an image
-  - singularity build hello_world.simg shub://singularityhub/ubuntu
+  - sudo singularity build hello_world.simg shub://singularityhub/ubuntu
   #- singularity build ubuntu.sif library://singularityhub/ubuntu
   # Check dead links
   - rm .travis.yml
