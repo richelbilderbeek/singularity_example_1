@@ -32,6 +32,8 @@ script:
   - singularity exec hello_world.simg ls /
   # ... which is different from Travis' root
   - ls /
+  # ... but running it like this, gives the Travis folder :-s
+  - singularity exec hello_world.simg ls
   # Show the /singularity file ...
   - singularity exec hello_world.simg cat /singularity
   # ... which is absent on Travis
