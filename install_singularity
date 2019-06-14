@@ -1,10 +1,8 @@
 #!/bin/bash
-VERSION=3.2.1
-wget https://github.com/sylabs/singularity/releases/download/v$VERSION/singularity-$VERSION.tar.gz
+VERSION=2.5.2
+wget https://github.com/singularityware/singularity/releases/download/$VERSION/singularity-$VERSION.tar.gz
 tar xvf singularity-$VERSION.tar.gz
-cd singularity
-./mconfig
-cd builddir
+cd singularity-$VERSION
+./configure --prefix=/usr/local
 make
 sudo make install
-
