@@ -22,6 +22,8 @@ install:
   - sudo ./install_singularity
 
 script:
+  # Show the version of the go programming language
+  - golang --version
   # Show the location
   - which singularity
   # Show the singularity version
