@@ -13,7 +13,10 @@ install:
   # There should be no go on Travis yet
   - go version
   - which go
+  - ls /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin
+  - ls /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin/go
   - rm /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin/go
+  - ls /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin/go
   # Check dead links
   - sudo apt-get install -qq npm
   - npm config set strict-ssl false
