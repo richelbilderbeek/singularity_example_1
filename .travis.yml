@@ -25,7 +25,7 @@ script:
   # Show the singularity version
   - singularity --version
   # Download an image
-  - singularity pull library://library/default/ubuntu:18.04 
+  - singularity pull library://library/default/ubuntu:18.04 || true
   # Show the root folder of the Singularity container ...
   - singularity exec ubuntu_18.04.sif ls /
   # ... which is different from Travis' root
@@ -40,6 +40,6 @@ script:
   - singularity exec ubuntu_18.04.sif cat /etc/os-releas* 
   # ... which is different on Travis
   - cat /etc/os-releas*
-  # Check dead links before singularity installs itself
-  - rm .travis.yml
+  # Check dead links
+  - rm ubuntu_18.04.sif
   - ./scripts/check_dead_links || true
