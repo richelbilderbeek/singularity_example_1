@@ -10,14 +10,25 @@ addons:
       #Cannot: added since yakkety :-(
       #- singularity-container
 
+# Go installation
+#
+# Default (v1.11):
+# GOROOT: /home/travis/.gimme/versions/go1.11.1.linux.amd64
+# Go binary:  /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin/go
+#
+# New (v1.12):
+#
+# GOROOT: /usr/local/go
+# Go binary: /usr/local/go/bin/go
 
-#/usr/local/go/bin
+env:
+  - GOROOT=/usr/local/go
 
 install:
   # There should be no go on Travis yet
   - echo $GOROOT
-  - go version
-  - which go
+  #- go version
+  #- which go
   #- ls /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin
   #- ls /home/travis/.gimme/versions/
   #- rm -rf /home/travis/.gimme/versions/go1.11.1.linux.amd64
@@ -33,7 +44,7 @@ install:
   # Singularity
   - sudo ./install_dependencies
   - sudo ./install_go
-  - /usr/local/go/bin/go version
+  - go version
   - sudo ./install_singularity
 
 script:
