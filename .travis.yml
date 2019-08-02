@@ -20,6 +20,7 @@ install:
   # Singularity
   - sudo ./install_dependencies
   - sudo ./install_go
+  - /usr/local/go/bin/go version
   - sudo ./install_singularity
 
 script:
