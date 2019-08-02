@@ -1,7 +1,7 @@
 language: generic
-dist: xenial
+dist: bionic
 cache: packages
-go: 1.12
+# go: 1.12 # Does not work
 
 addons: 
   apt: 
@@ -43,8 +43,9 @@ install:
   - ./scripts/check_dead_links
   # Singularity
   - sudo ./install_dependencies
-  - sudo ./install_go
-  - sudo update-alternatives --set go /usr/local/go/bin/go
+  - sudo apt install go
+  #- sudo ./install_go
+  #- sudo update-alternatives --set go /usr/local/go/bin/go
   - go version
   - which go
   - sudo ./install_singularity
