@@ -11,13 +11,9 @@ sudo apt-get update && sudo apt-get install -y \
     pkg-config \
     git
 
-export VERSION=1.12 OS=linux ARCH=amd64 && \  # Replace the values as needed
-  wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz && \ # Downloads the required Go package
-  sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz && \ # Extracts the archive
-  rm go$VERSION.$OS-$ARCH.tar.gz    # Deletes the ``tar`` file
+export PATH=/usr/local/go/bin:$PATH
 
-echo 'export PATH=/usr/local/go/bin:$PATH' >> ~/.bashrc && \
-  source ~/.bashrc
+go version
 
 export VERSION=3.2.0 && # adjust this as necessary \
     wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-${VERSION}.tar.gz && \
