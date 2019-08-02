@@ -14,9 +14,8 @@ install:
   - go version
   - which go
   - ls /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin
-  - ls /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin/go
-  - rm /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin/go
-  - ls /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin/go
+  - ls /home/travis/.gimme/versions/
+  - rm -rf /home/travis/.gimme/versions/go1.11.1.linux.amd64
   - go version || true
   - which go || true
   # Check dead links
