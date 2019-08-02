@@ -21,8 +21,8 @@ addons:
 # GOROOT: /usr/local/go
 # Go binary: /usr/local/go/bin/go
 
-env:
-  - GOROOT=/usr/local/go
+#env:
+#  - GOROOT=/usr/local/go
 
 install:
   # There should be no go on Travis yet
