@@ -41,7 +41,7 @@ script:
   # ... which is different on Travis
   - cat /etc/os-releas*
   # Check dead links
-  - rm *.sif
+  - rm -f *.sif
   - rm *.tar.gz
   - rm -rf singularity
   - ./scripts/check_dead_links || true
