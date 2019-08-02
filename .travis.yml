@@ -18,6 +18,7 @@ install:
   - rm .travis.yml
   - ./scripts/check_dead_links
   # Singularity
+  - sudo ./install_dependencies
   - sudo ./install_go
   - sudo ./install_singularity
 
