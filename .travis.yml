@@ -18,28 +18,11 @@ install:
   - go version
   - which go
   - sudo ./install_singularity
+  - singularity --version
 
 script:
-  # Show the location
-  - which singularity
-  # Show the singularity version
-  - singularity --version
-  # Download an image
-  - singularity pull library://library/default/ubuntu:18.04 || true
-  # Show the root folder of the Singularity container ...
-  - singularity exec ubuntu_18.04.sif ls /
-  # ... which is different from Travis' root
-  - ls /
-  # ... but running it like this, gives the Travis folder :-s
-  - singularity exec ubuntu_18.04.sif ls
-  # Show the /singularity file ...
-  - singularity exec ubuntu_18.04.sif cat /singularity
-  # ... which is absent on Travis
-  - cat /singularity || true
-  # Show the singularity OS version ...
-  - singularity exec ubuntu_18.04.sif cat /etc/os-releas* 
-  # ... which is different on Travis
-  - cat /etc/os-releas*
+  # Build the container
+  - sudo singularity build singularity_example_1.sif singularity_example_1.def
   # Check dead links
   - rm -f *.sif
   - rm *.tar.gz
