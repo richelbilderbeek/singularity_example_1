@@ -44,7 +44,9 @@ install:
   # Singularity
   - sudo ./install_dependencies
   - sudo ./install_go
+  - sudo update-alternatives --set go /usr/local/go/bin/go
   - go version
+  - which go
   - sudo ./install_singularity
 
 script:
