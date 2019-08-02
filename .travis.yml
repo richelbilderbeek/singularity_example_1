@@ -1,50 +1,21 @@
 language: generic
 dist: bionic
 cache: packages
-# go: 1.12 # Does not work
-
-addons: 
-  apt: 
-    packages: 
-      - libarchive-dev
-      #Cannot: added since yakkety :-(
-      #- singularity-container
-
-# Go installation
-#
-# Default (v1.11):
-# GOROOT: /home/travis/.gimme/versions/go1.11.1.linux.amd64
-# Go binary:  /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin/go
-#
-# New (v1.12):
-#
-# GOROOT: /usr/local/go
-# Go binary: /usr/local/go/bin/go
-
-#env:
-#  - GOROOT=/usr/local/go
 
 install:
-  # There should be no go on Travis yet
-  - echo $GOROOT
-  #- go version
-  #- which go
-  #- ls /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin
-  #- ls /home/travis/.gimme/versions/
-  #- rm -rf /home/travis/.gimme/versions/go1.11.1.linux.amd64
-  #- go version || true
-  #- which go || true
+  # Go, from https://tecadmin.net/install-go-on-ubuntu/
+  - wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+  - sudo tar -xvf go1.12.7.linux-amd64.tar.gz
+  - sudo mv go /usr/local
+  - export GOROOT=/usr/local/go
+  - export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
   # Check dead links
   - sudo apt-get install -qq npm
   - npm config set strict-ssl false
   - sudo npm install -g markdown-link-check
-  # Check dead links before singularity installs itself
-  - rm .travis.yml
-  - ./scripts/check_dead_links
   # Singularity
   - sudo ./install_dependencies
-  - sudo apt install golang
-  #- sudo ./install_go
+  - sudo ./install_go_1_12
   #- sudo update-alternatives --set go /usr/local/go/bin/go
   - go version
   - which go
@@ -71,3 +42,6 @@ script:
   - singularity exec ubuntu_18.04.sif cat /etc/os-releas* 
   # ... which is different on Travis
   - cat /etc/os-releas*
+  # Check dead links before singularity installs itself
+  - rm .travis.yml
+  - ./scripts/check_dead_links || true
