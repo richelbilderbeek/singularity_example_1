@@ -6,6 +6,10 @@ Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
 
 Singularity example 1: Hello World.
 
+ * Ubuntu distro: 18.04 (Bionic) 
+ * Go v1.12
+ * Singularity v3.2.1
+
 ## Result
 
 From [a Travis CI build log](https://travis-ci.org/richelbilderbeek/singularity_example_1/jobs/563880368#L2872).
