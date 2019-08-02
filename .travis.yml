@@ -15,8 +15,6 @@ install:
   - sudo npm install -g markdown-link-check
   # Singularity
   - sudo ./install_dependencies
-  - sudo ./install_go_1_12
-  #- sudo update-alternatives --set go /usr/local/go/bin/go
   - go version
   - which go
   - sudo ./install_singularity
