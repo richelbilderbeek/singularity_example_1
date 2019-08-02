@@ -43,7 +43,7 @@ install:
   - ./scripts/check_dead_links
   # Singularity
   - sudo ./install_dependencies
-  - sudo apt install go
+  - sudo apt install golang
   #- sudo ./install_go
   #- sudo update-alternatives --set go /usr/local/go/bin/go
   - go version
