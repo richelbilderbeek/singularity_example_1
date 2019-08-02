@@ -10,6 +10,9 @@ addons:
       #- singularity-container
 
 install:
+  # There should be no go on Travis yet
+  - go version
+  - which go
   # Check dead links
   - sudo apt-get install -qq npm
   - npm config set strict-ssl false
