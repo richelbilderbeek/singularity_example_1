@@ -10,15 +10,19 @@ addons:
       #Cannot: added since yakkety :-(
       #- singularity-container
 
+
+#/usr/local/go/bin
+
 install:
   # There should be no go on Travis yet
+  - echo $GOROOT
   - go version
   - which go
-  - ls /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin
-  - ls /home/travis/.gimme/versions/
-  - rm -rf /home/travis/.gimme/versions/go1.11.1.linux.amd64
-  - go version || true
-  - which go || true
+  #- ls /home/travis/.gimme/versions/go1.11.1.linux.amd64/bin
+  #- ls /home/travis/.gimme/versions/
+  #- rm -rf /home/travis/.gimme/versions/go1.11.1.linux.amd64
+  #- go version || true
+  #- which go || true
   # Check dead links
   - sudo apt-get install -qq npm
   - npm config set strict-ssl false
