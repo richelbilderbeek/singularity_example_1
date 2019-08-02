@@ -26,20 +26,19 @@ script:
   - which singularity
   # Show the singularity version
   - singularity --version
-  # Build an image, must use sudo
-  - sudo singularity build hello_world.simg shub://singularityhub/ubuntu
-  # Run the image
-  # Show the root ...
-  - singularity exec hello_world.simg ls /
+  # Download an image
+  - singularity pull library://library/default/ubuntu:18.04 
+  # Show the root folder of the Singularity container ...
+  - singularity exec ubuntu_18.04.sif ls /
   # ... which is different from Travis' root
   - ls /
   # ... but running it like this, gives the Travis folder :-s
-  - singularity exec hello_world.simg ls
+  - singularity exec ubuntu_18.04.sif ls
   # Show the /singularity file ...
-  - singularity exec hello_world.simg cat /singularity
+  - singularity exec ubuntu_18.04.sif cat /singularity
   # ... which is absent on Travis
   - cat /singularity || true
   # Show the singularity OS version ...
-  - singularity exec hello_world.simg cat /etc/os-releas* 
+  - singularity exec ubuntu_18.04.sif cat /etc/os-releas* 
   # ... which is different on Travis
   - cat /etc/os-releas*
