@@ -1,6 +1,7 @@
 language: generic
 dist: xenial
 cache: packages
+go: 1.12
 
 addons: 
   apt: 
