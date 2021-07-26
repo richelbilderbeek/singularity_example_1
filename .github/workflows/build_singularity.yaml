@@ -7,18 +7,20 @@ name: build_singularity
 jobs:
   build_singularity:
 
-    strategy:
-      fail-fast: false
-
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        singularity_version:
+          - '3.5.3'
+    container:
+      image: quay.io/singularity/singularity:v${{ matrix.singularity_version }}
+      options: --privileged
+
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v2
-
-      - uses: eWaterCycle/setup-singularity@v6
-        with:
-         singularity-version: 3.6.4
 
       - name: Show singularity version
         run: singularity version
