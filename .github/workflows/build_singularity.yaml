@@ -39,6 +39,9 @@ jobs:
              ls
          fi
 
-      - name: Run Container
+      - name: Test container
         run: singularity run singularity_example_1.sif
+
+      - name: Run container
+        run: singularity exec lolcow_latest.sif cowsay moo
 

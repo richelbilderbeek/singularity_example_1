@@ -1,5 +1,6 @@
-BootStrap: library
-From: ubuntu:18.04
+BootStrap: debootstrap
+OSVersion: trusty
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
 %runscript
     echo "My root folder: "
@@ -7,13 +8,20 @@ From: ubuntu:18.04
     echo "My operating system: "
     cat /etc/*-release
 
+%post
+    echo "Hello from inside the container"
+    sed -i 's/$/ universe/' /etc/apt/sources.list
+    apt-get update
+    apt-get -y install vim
+    apt-get clean
+
 %labels
 
     AUTHOR Richel J.C. Bilderbeek
 
     NAME singularity_example_1
  
-    DESCRIPTION Singularity example 1: Singularity 3.2 and Ubuntu 18.4
+    DESCRIPTION Singularity example 1: Singularity and Ubuntu
 
     USAGE simply run the container
 
