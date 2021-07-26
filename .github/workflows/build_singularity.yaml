@@ -16,6 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: eWaterCycle/setup-singularity@v6
+        with:
+         singularity-version: 3.6.4
+
       - name: Build Container
         env:
           SINGULARITY_RECIPE: Singularity
