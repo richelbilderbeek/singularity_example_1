@@ -1,5 +1,4 @@
 language: generic
-dist: bionic
 cache: packages
 
 install:
@@ -9,24 +8,16 @@ install:
   - sudo mv go /usr/local
   - export GOROOT=/usr/local/go
   - export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-  # Check dead links
-  #- sudo apt-get install -qq npm
-  #- npm config set strict-ssl false
-  #- sudo npm install -g markdown-link-check
   # Singularity
-  - sudo ./install_dependencies
+  - sudo ./install_dependencies.sh
   - go version
   - which go
-  - sudo ./install_singularity
+  - sudo ./install_singularity.sh
   - singularity --version
 
 script:
   # Build the container
-  - sudo singularity build singularity_example_1.sif singularity_example_1.def
+  - sudo singularity build singularity_example_1.sif Singularity
   # Run the container
   - ./singularity_example_1.sif
-  # Check dead links
-  #- rm -f *.sif
-  #- rm -f *.tar.gz
-  #- sudo rm -rf singularity
-  #- ./scripts/check_dead_links || true
+

@@ -1,8 +1,9 @@
 # singularity_example_1
 
-Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
----|---
-`master`|[![Build Status](https://travis-ci.org/richelbilderbeek/singularity_example_1.svg?branch=master)](https://travis-ci.org/richelbilderbeek/singularity_example_1)
+Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/richelbilderbeek/singularity_example_1/actions)          
+---------|------------------------------------------------------------------------------------------------------------------------------------
+`master` |![build_singularity](https://github.com/richelbilderbeek/singularity_example_1/workflows/build_singularity/badge.svg?branch=master) 
+`develop`|![build_singularity](https://github.com/richelbilderbeek/singularity_example_1/workflows/build_singularity/badge.svg?branch=develop)
 
 Singularity example 1: Hello World.
 

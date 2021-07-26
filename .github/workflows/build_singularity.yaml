@@ -1,0 +1,32 @@
+on:
+  push:
+  pull_request:
+
+name: build_singularity
+
+jobs:
+  build_singularity:
+
+    strategy:
+      fail-fast: false
+
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build Container
+        env:
+          SINGULARITY_RECIPE: Singularity
+          OUTPUT_CONTAINER: singularity_example_1.sif
+        run: |
+         ls 
+         if [ -f "${SINGULARITY_RECIPE}" ]; then
+              sudo -E singularity build ${OUTPUT_CONTAINER} ${SINGULARITY_RECIPE}
+         else
+             echo "${SINGULARITY_RECIPE} is not found."
+             echo "Present working directory: $PWD"
+             ls
+         fi
+
