@@ -10,3 +10,6 @@ Singularity example 1: Hello World.
 See [Singularity](Singularity) (a script) to see what the container does.
 
 This repo builds the container, runs it and uploads it.
+
+See the build logs at [https://github.com/richelbilderbeek/singularity_example_1/actions](https://github.com/richelbilderbeek/singularity_example_1/actions)
+to see the results.
