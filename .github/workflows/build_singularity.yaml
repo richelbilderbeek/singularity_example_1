@@ -39,6 +39,6 @@ jobs:
              ls
          fi
 
-      - name: Test Container
+      - name: Run Container
         run: singularity run singularity_example_1.sif
 
