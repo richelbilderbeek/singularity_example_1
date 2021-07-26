@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         singularity_version:
-          - '3.5.3'
+          - '3.8.0'
     container:
       image: quay.io/singularity/singularity:v${{ matrix.singularity_version }}
       options: --privileged
