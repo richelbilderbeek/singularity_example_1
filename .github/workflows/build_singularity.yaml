@@ -20,6 +20,9 @@ jobs:
         with:
          singularity-version: 3.6.4
 
+      - name: Show singularity version
+        run: singularity version
+
       - name: Build Container
         env:
           SINGULARITY_RECIPE: Singularity
